@@ -1,3 +1,9 @@
+<p align="center">
+<a href="https://github.com/cfsghost/brig">
+<img src="https://user-images.githubusercontent.com/252072/30776180-913e50e0-a0d4-11e7-819b-87ed776e6a47.png">
+</a>
+</p>
+
 # Groa
 
 Expressive gRPC middleware framework for Node.js. It provides the same style of middleware system and APIs many developers are familiar with which is similar to Koa 2.
