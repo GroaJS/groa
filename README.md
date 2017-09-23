@@ -48,6 +48,91 @@ app.listen(50051, () => {
 });
 ```
 
+__example.proto__
+
+```proto
+syntax = "proto3";
+
+package example.foo;
+
+service Example1 {
+	rpc Ping(Ping) returns (Pong) {}
+}
+
+message Ping {
+	string content = 1;
+}
+
+message Pong {
+	string content = 1;
+}
+```
+
+## Streaming
+
+Implement streaming method is quite easy that writing to `Stream` object of body directly.
+
+```javascript
+const Groa = require('Groa');
+
+const app = new Groa();
+
+// Add proto file
+app.addProto(__dirname + '/proto/stream.proto');
+
+const delay = (interval) => {
+	return new Promise((resolve) => {
+		setTimeout(resolve, interval);
+	});
+}
+
+// Add middleware
+app.use(async (ctx, next) => {
+
+	// send a message
+	ctx.body.write({
+		timestamp: new Date()
+	});
+	
+	// delay 1 second
+	await delay(1000);
+	
+	// send a message
+	ctx.body.write({
+		timestamp: new Date()
+	});
+	
+	// delay 1 second
+	await delay(1000);
+	
+	// complete
+	ctx.body.end();
+});
+
+app.listen(50051, () => {
+	console.log('Listening on port 50051');
+});
+```
+
+__stream.proto__
+
+```proto
+syntax = "proto3";
+
+package example.foo;
+
+service Example1 {
+	rpc receive(ReceiveRequest) returns (stream ReceiveResponse) {};
+}
+
+message ReceiveRequest {
+}
+
+message ReceiveResponse {
+	string timestamp = 1;
+}
+```
+
 ## TODO
 
 * Need a good router
