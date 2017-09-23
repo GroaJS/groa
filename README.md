@@ -1,6 +1,51 @@
-# groa
+# Groa
 
-Expressive gRPC middleware framework for Node.js
+Expressive gRPC middleware framework for Node.js. It provides the same style of middleware system and APIs many developers are familiar with which is similar to Koa 2.
+
+[![NPM](https://nodei.co/npm/groa.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/groa/)
+
+## Requirement
+
+Node.js v7.6+ is required, the middleware system of Gora is based on async function.
+
+## Installation
+
+Install via NPM:
+
+```shell
+npm install groa --save
+```
+
+## Get Started
+
+The same way with Koa to implement your first gRPC server:
+
+```javascript
+const Groa = require('Groa');
+
+const app = new Groa();
+
+// Add proto file
+app.addProto(__dirname + '/proto/example.proto');
+
+// Add middleware
+app.use(async (ctx, next) => {
+
+	// response
+	ctx.body = {
+		content: 'hello'
+	};
+});
+
+app.listen(50051, () => {
+	console.log('Listening on port 50051');
+});
+```
+
+## TODO
+
+* Need a good router
+* Need more testcases
 
 ## License
 Licensed under the MIT License
