@@ -4,7 +4,6 @@ package example.foo;
 
 service Example1 {
 	rpc Ping(Ping) returns (Pong) {}
-	rpc receive(ReceiveRequest) returns (stream ReceiveResponse) {};
 }
 
 message Ping {
@@ -13,11 +12,4 @@ message Ping {
 
 message Pong {
 	string content = 1;
-}
-
-message ReceiveRequest {
-}
-
-message ReceiveResponse {
-	string timestamp = 1;
 }

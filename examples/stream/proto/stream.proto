@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package example.foo;
+
+service Example1 {
+	rpc receive(ReceiveRequest) returns (stream ReceiveResponse) {};
+}
+
+message ReceiveRequest {
+}
+
+message ReceiveResponse {
+	string timestamp = 1;
+}

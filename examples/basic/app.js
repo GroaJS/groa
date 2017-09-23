@@ -12,13 +12,7 @@ app.use(async (ctx, next) => {
 
 app.use(async (ctx, next) => {
 
-	if (ctx.path === 'example.foo.Example1.receive') {
-		setInterval(() => {
-			ctx.body.write({
-				timestamp: new Date()
-			});
-		}, 1000);
-	} else {
+	if (ctx.path === 'example.foo.Example1.ping') {
 		ctx.body = {
 			content: 'pong'
 		};
