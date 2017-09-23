@@ -1,0 +1,29 @@
+{
+  "name": "groa",
+  "version": "0.0.1",
+  "description": "Expressive gRPC middleware framework",
+  "main": "./lib/application.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfsghost/groa.git"
+  },
+  "keywords": [
+    "framework",
+    "grpc"
+  ],
+  "author": "Fred Chien <cfsghost@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cfsghost/groa/issues"
+  },
+  "homepage": "https://github.com/cfsghost/groa#readme",
+  "dependencies": {
+    "debug": "^3.0.1",
+    "google-proto-files": "^0.13.1",
+    "grpc": "^1.6.0",
+    "protobufjs": "^6.8.0"
+  }
+}
