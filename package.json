@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cfsghost/groa.git"
+    "url": "git+https://github.com/GroaJS/groa.git"
   },
   "keywords": [
     "framework",
@@ -17,9 +17,9 @@
   "author": "Fred Chien <cfsghost@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cfsghost/groa/issues"
+    "url": "https://github.com/GroaJS/groa/issues"
   },
-  "homepage": "https://github.com/cfsghost/groa#readme",
+  "homepage": "https://github.com/GroaJS/groa#readme",
   "dependencies": {
     "debug": "^3.0.1",
     "google-proto-files": "^0.13.1",
