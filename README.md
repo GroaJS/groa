@@ -137,6 +137,7 @@ message ReceiveResponse {
 
 * Need a good router
 * Need more testcases
+* Support google.api.http to generate restful API automatically
 
 ## License
 Licensed under the MIT License
