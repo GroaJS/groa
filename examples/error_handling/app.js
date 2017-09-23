@@ -6,16 +6,11 @@ app.addProto(__dirname + '/proto/example.proto');
 
 app.use(async (ctx, next) => {
 
-	console.log('middleware');
-	await next();
+	ctx.throw(Groa.status.OUT_OF_RANGE, 'OUT OF RANGE!!!');
+
+	console.log('ooops');
 });
 
-app.use(async (ctx, next) => {
-
-	if (ctx.path === 'example.foo.Example1.ping') {
-		ctx.body = ctx.req.body;
-	}
-});
 
 app.listen(50051, () => {
 	console.log('Listening on port 50051');

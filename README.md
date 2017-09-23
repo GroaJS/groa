@@ -133,6 +133,43 @@ message ReceiveResponse {
 }
 ```
 
+## Status Code and Error Message
+
+You can set status code and message when problem occurring for a request, the following is status code of gRPC Groa supported:
+
+* OK: 0
+* CANCELLED: 1
+* UNKNOWN: 2
+* INVALID_ARGUMENT: 3
+* DEADLINE_EXCEEDED: 4
+* NOT_FOUND: 5
+* ALREADY_EXISTS: 6
+* PERMISSION_DENIED: 7
+* RESOURCE_EXHAUSTED: 8
+* FAILED_PRECONDITION: 9
+* ABORTED: 10
+* OUT_OF_RANGE: 11
+* UNIMPLEMENTED: 12
+* INTERNAL: 13
+* UNAVAILABLE: 14
+* DATA_LOSS: 15
+* UNAUTHENTICATED: 16
+
+Usage:
+
+```javascript
+ctx.status = Groa.status.ABORTED;
+ctx.message = 'Something\'s wrong'
+```
+
+Or you can throw an error:
+
+```javascript
+ctx.throw('wrong'); // UNKNOWN if no status code
+ctx.throw(Application.status.OUT_OF_RANGE);
+ctx.throw(Application.status.OUT_OF_RANGE, 'OUT OF RANGE!!!');
+```
+
 ## TODO
 
 * Need a good router

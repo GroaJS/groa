@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package example.foo;
+
+service Example1 {
+	rpc OutOfRange(OutOfRange) returns (OutOfRange) {}
+}
+
+message OutOfRange {
+}
+
