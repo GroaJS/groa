@@ -27,7 +27,7 @@ npm install groa --save
 The same way with Koa to implement your first gRPC server:
 
 ```javascript
-const Groa = require('Groa');
+const Groa = require('groa');
 
 const app = new Groa();
 
@@ -73,7 +73,7 @@ message Pong {
 Implement streaming method is quite easy that writing to `Stream` object of body directly.
 
 ```javascript
-const Groa = require('Groa');
+const Groa = require('groa');
 
 const app = new Groa();
 
