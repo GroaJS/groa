@@ -12,7 +12,7 @@ app.use(async (ctx, next) => {
 
 app.use(async (ctx, next) => {
 
-	if (ctx.path === 'example.foo.Example1.ping') {
+	if (ctx.path === '/example.foo.Example1/Ping') {
 		ctx.body = ctx.req.body;
 	}
 });
