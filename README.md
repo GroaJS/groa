@@ -22,7 +22,7 @@ Install via NPM:
 npm install groa --save
 ```
 
-## Get Started
+## Getting Started
 
 The same way with Koa to implement your first gRPC server:
 
@@ -170,9 +170,12 @@ ctx.throw(Application.status.OUT_OF_RANGE);
 ctx.throw(Application.status.OUT_OF_RANGE, 'OUT OF RANGE!!!');
 ```
 
+## Middlewares
+
+* Router: [gora-router](https://github.com/GroaJS/groa-router)
+
 ## TODO
 
-* Need a good router
 * Need more testcases
 * Support google.api.http to generate restful API automatically
 
