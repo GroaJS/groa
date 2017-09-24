@@ -178,6 +178,7 @@ ctx.throw(Application.status.OUT_OF_RANGE, 'OUT OF RANGE!!!');
 
 * Need more testcases
 * Support google.api.http to generate restful API automatically
+* Support SSL
 
 ## License
 Licensed under the MIT License
