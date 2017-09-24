@@ -32,7 +32,7 @@ const Groa = require('groa');
 const app = new Groa();
 
 // Add proto file
-app.addProto(__dirname + '/proto/example.proto');
+app.addProto(__dirname + '/example.proto');
 
 // Add middleware
 app.use(async (ctx, next) => {
@@ -78,7 +78,7 @@ const Groa = require('groa');
 const app = new Groa();
 
 // Add proto file
-app.addProto(__dirname + '/proto/stream.proto');
+app.addProto(__dirname + '/stream.proto');
 
 const delay = (interval) => {
 	return new Promise((resolve) => {
