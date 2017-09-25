@@ -38,9 +38,7 @@ app.addProto(__dirname + '/example.proto');
 app.use(async (ctx, next) => {
 
 	// response
-	ctx.body = {
-		content: 'hello'
-	};
+	ctx.body = ctx.req.body;
 });
 
 app.listen(50051, () => {
