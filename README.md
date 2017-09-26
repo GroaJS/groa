@@ -66,7 +66,7 @@ message Pong {
 }
 ```
 
-## Streaming
+## Send Data as a Stream
 
 Implement streaming method is quite easy that writing to `Stream` object of body directly.
 
@@ -124,6 +124,55 @@ service Example1 {
 }
 
 message ReceiveRequest {
+}
+
+message ReceiveResponse {
+	string timestamp = 1;
+}
+```
+
+## Receive Data from Stream
+
+When input is a stream, `ctx.req.body` will be a stream object for receiving data. Besides, `ctx.body` contains the same stream object with `ctx.req.body` if output is stream as well.
+
+```javascript
+const Groa = require('groa');
+
+const app = new Groa();
+
+// Add proto file
+app.addProto(__dirname + '/stream.proto');
+
+// Add middleware
+app.use(async (ctx, next) => {
+
+	// Alias as ctx.body for input stream
+	ctx.req.body.on('data', (data) => {
+		console.log(data);
+		
+		// Send the same data back to client
+		ctx.body.write(data);
+	});
+});
+
+app.listen(50051, () => {
+	console.log('Listening on port 50051');
+});
+```
+
+__stream.proto__
+
+```proto
+syntax = "proto3";
+
+package example.foo;
+
+service Example1 {
+	rpc receive(stream ReceiveRequest) returns (stream ReceiveResponse) {};
+}
+
+message ReceiveRequest {
+	string timestamp = 1;
 }
 
 message ReceiveResponse {
