@@ -3,10 +3,11 @@ syntax = "proto3";
 package example.foo;
 
 service Example1 {
-	rpc receive(ReceiveRequest) returns (stream ReceiveResponse) {};
+	rpc receive(stream ReceiveRequest) returns (stream ReceiveResponse) {};
 }
 
 message ReceiveRequest {
+	string timestamp = 1;
 }
 
 message ReceiveResponse {

@@ -14,6 +14,10 @@ const delay = (interval) => {
 // Add middleware
 app.use(async (ctx, next) => {
 
+	ctx.req.body.on('data', (data) => {
+		console.log(data);
+	});
+
 	// send a message
 	ctx.body.write({
 		timestamp: new Date()
@@ -31,7 +35,7 @@ app.use(async (ctx, next) => {
 	await delay(1000);
 	
 	// complete
-	ctx.body.end();
+	//ctx.body.end();
 });
 
 app.listen(50051, () => {

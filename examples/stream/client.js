@@ -8,6 +8,10 @@ client.loadProto(__dirname + '/proto/stream.proto').then(async () => {
 
 	let stream = await Example1.receive({});
 
+	stream.write({
+		timestamp: new Date()
+	});
+
 	stream.on('data', (data) => {
 		console.log(data);
 	});
