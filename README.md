@@ -221,6 +221,34 @@ ctx.throw(Application.status.OUT_OF_RANGE, 'OUT OF RANGE!!!');
 
 * Router: [gora-router](https://github.com/GroaJS/groa-router)
 
+## Using Groa to build a Client with Promise-style functions
+
+Of course you can use official gRPC SDK to build your own client, but Groa provide a `Client` class which provides Promise-style functions for making client in ES6.
+
+```javascript
+const { Client } = require('groa');
+
+const client = new Client('0.0.0.0', 50051);
+
+const main = async () => {
+
+	// Loading definition file
+	await client.loadProto(__dirname + '/example.proto');
+	
+	// Get service defnined
+	let Example1 = client.getService('example.foo.Example1');
+	
+	// call
+	let ret = await Example1.ping({
+		content: 'hello'
+	});
+
+	console.log(ret);
+};
+
+main();
+```
+
 ## TODO
 
 * Need more testcases
