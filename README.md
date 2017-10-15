@@ -223,7 +223,7 @@ ctx.throw(Application.status.OUT_OF_RANGE, 'OUT OF RANGE!!!');
 
 ## Using Groa to build a Client with Promise-style functions
 
-Of course you can use official gRPC SDK to build your own client, but Groa provide a `Client` class which provides Promise-style functions to make client much easier in ES6.
+Groa provide a `Client` class which provides Promise-style functions to make client much easier in ES6.
 
 ```javascript
 const { Client } = require('groa');
