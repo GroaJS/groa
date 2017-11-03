@@ -1,6 +1,6 @@
 {
   "name": "groa",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Expressive gRPC middleware framework",
   "main": "./lib/application.js",
   "scripts": {
